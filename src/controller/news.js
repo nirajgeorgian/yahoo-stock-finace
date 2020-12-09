@@ -33,7 +33,7 @@ const updateNews = (key, category) => {
 };
 
 export const getNews = async (req, res) => {
-  const { category } = req.query;
+  const { category = "TSLA" } = req.query;
   const key = `finance::news::${category}`;
 
   const values = await getAsync(key);

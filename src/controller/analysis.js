@@ -33,7 +33,7 @@ const updateAnalysisApi = (key, symbol) => {
 };
 
 export const getAnalysis = async (req, res) => {
-  const { symbol } = req.query;
+  const { symbol = "AMRN" } = req.query;
   const key = `finance::analysis::${symbol}`;
 
   const values = await getAsync(key);
